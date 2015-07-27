@@ -29,7 +29,7 @@ RUN \
 	npm install
 
 RUN \
-  git clone https://github.com/yohanboniface/thank-you-map.git
+  git clone https://github.com/yohanboniface/thank-you-map.git /opt/project
 	
 WORKDIR /opt/app/kosmtik
 
@@ -44,6 +44,8 @@ RUN \
     --install kosmtik-deploy \
     --install kosmtik-geojson-overlay
 
+VOLUME /opt/project
+
 EXPOSE 6789
 
-CMD ["node", "index.js", "serve", "--host", "0.0.0.0", "../thank-you-map/project.yml"]
+CMD ["node", "index.js", "serve", "--host", "0.0.0.0", "/opt/project/project.yml"]
