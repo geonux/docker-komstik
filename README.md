@@ -15,6 +15,7 @@ docker run -p 6789:6789 -t -i komstik
 
 ### Launch with your own project ###
 ```
+cd
 git clone  https://github.com/yohanboniface/thank-you-map.git
-docker run -p 6789:6789 -v ./thank-you-map:/opt/project -t -i komstik
+docker run -p 6789:6789 -v ~/thank-you-map:/opt/project -t -i komstik
 ```
